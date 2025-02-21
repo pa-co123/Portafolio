@@ -1,0 +1,181 @@
+body {
+    margin: 20px 30px 50px 30px;
+    background-image: url('conejos.gif');
+    background-color: #ffffff;
+}
+
+
+h1 {
+    text-align: center;
+    color: #000000;
+    font-family: "Knewave", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+
+}
+
+#tit_1 {
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding-left: 20px;
+    
+}
+
+img {
+    width: 600px;
+    padding: 20px;
+    border-radius: 15%;
+    
+
+}
+
+#perro {
+    width: 508px;
+    padding: 5px;
+    padding-bottom: 18px;
+}
+
+#se_1 {
+    background: white;
+    padding-bottom: 5px;
+    border-radius: 43px;
+    outline: 10px groove #4f2121;
+    
+}
+
+#se_2 {
+    background: white;
+    padding-bottom: 1px;
+    padding-top: 3px;
+    padding-left: 30px;
+    border-radius: 43px;
+    outline: 10px groove #3c5f7e;
+}
+
+li {
+    font-size: 19px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#vent {
+    background: white;
+    padding-bottom: 1px;
+    padding-top: 3px;
+    padding-left: 30px;
+    border-radius: 43px;
+    outline: 10px groove #02f713;
+}
+
+#perbal {
+    width: 300px;
+    padding: 20px;
+}
+
+#es_3 {
+    background: white;
+    padding-bottom: 1px;
+    padding-top: 3px;
+    padding-left: 30px;
+    border-radius: 43px;
+    outline: 10px groove #f70a02;
+}
+
+#mojado {
+    width: 400px;
+    padding: 5px;
+    
+}
+
+h2 {
+    color: #000000;
+    font-family: "Knewave", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+
+.imagen-mascotas {
+    width: 375px;
+    border-radius: 15%;
+}
+
+#perro {
+    width: 500px;
+}
+
+
+#gato {
+    width: auto;   
+    height: 320px; 
+    
+}
+
+
+#es_4 {
+    background: white;
+    padding-bottom: 1px;
+    padding-top: 3px;
+    padding-left: 30px;
+    border-radius: 43px;
+    outline: 10px groove #ff00fb;
+}
+
+table {
+    width: 100%;
+    border: 2px solid;
+    background-color: white;
+    
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: rgb(251, 255, 0);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+tr, td {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#roedor {
+    width: auto;   
+    height: 287px; 
+}
+
+#sec_4{
+    background-image: url(peloblanco.jpg);
+    border-radius: 43px;
+    outline: 8px groove #000000;
+    text-align: center;
+    background-size: cover;
+}
+
+#sec_5{
+    background-image: url("pelo.png");
+    border-radius: 43px;
+    outline: 8px groove #f6ff00;
+    text-align: center;
+    background-size: cover;
+}
+
+#listma {
+    color: white;
+}
+
+#gatoo {
+    width: auto;   
+    height: 287px; 
+}
