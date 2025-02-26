@@ -1,0 +1,63 @@
+<!--FLEXBOX: Hace que las cajas sean flexibles
+en bootstrap, tambien lo maneja a traves de clase que hacen que
+se trabaje mas facilmente.
+
+eje principal:
+justify-content : 
+flex-start, flex-end, center, space-between, space-around, space-evenly
+
+Con BOOTSTRAP tenemos clase:
+justify-content-start
+justify-content-end
+justify-content-center
+justify-content-space-between
+........
+
+eje secundario;
+alig-items:
+flex-start, flex-end, center, baseline, stretch
+
+Con BOOTSTRAP tenemos clase:
+.align-items-start
+.align-items-center
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type = "text/css">
+        .contenedor {
+            display:flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class = "contenedor">
+        Mi contenedor
+        <i class="bi bi-hypnotize" style="font-size: 100px;"></i>
+    </div>
+
+    <div class="d-flex justify-content-center flex-wrap align-items-center">
+        Mi contenedro con BOOTSTRAP
+        <i class="bi bi-playstation justify-content-center flex-end " style="font-size: 2.5rem;" ></i>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
