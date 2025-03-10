@@ -1,0 +1,14 @@
+#contenedor {
+    background-color: orangered;
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    color: blue;
+}
+
+#imagen {
+    border-radius: 150px;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #0400ff;
+}

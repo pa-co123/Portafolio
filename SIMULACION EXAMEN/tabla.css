@@ -1,0 +1,14 @@
+.cabezera {
+    background-color: blue;
+    height: 30px;
+    text-align: center;
+}
+
+.cuerpo {
+    text-align: left;
+    background-color: yellow;
+}
+
+#precio {
+    text-align: right;
+}
