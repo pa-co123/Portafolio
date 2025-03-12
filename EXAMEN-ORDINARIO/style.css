@@ -1,0 +1,89 @@
+/*TITULOS*/
+h1 {
+    color: blue;
+    font-size: 40px;
+}
+
+h2 {
+    color: blue;
+    font-size: 30px;
+}
+
+h3 {
+    color: blue;
+    font-size: 20px;
+}
+
+/*MASCOTAS*/
+#masco {
+    height: 200px;
+    width: 200px;
+    border-radius: 70%;
+    border: solid red;
+    
+}
+
+.mascotas {
+    background-color:aqua;
+    margin: 20px;
+    padding: 25px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*PLANTA*/
+.imagen_planta img {
+    width: 200px;
+    height: 200px;
+    
+}
+
+/*TABLA*/
+.cabezera{
+    background-color: blue;
+    font-weight: bold;
+    color: white;
+}
+
+th, td {
+    height: 30px; 
+    text-align: center; 
+}
+
+#vino{
+    background-color: rgb(128, 11, 11);
+}
+
+.filas{
+    background-color: rgb(254, 223, 136);
+}
+
+
+/*BANDERAS*/
+.contenedor-banderas {
+   display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 200px;
+    background-color: lightgray; 
+    gap: 10px;
+}
+
+#francia {
+    background: linear-gradient(to right, rgb(0, 0, 255), rgb(255, 255, 255), rgb(255, 0, 0));
+    width: 100px;
+    height: 100px;
+}
+
+#alemania {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(234, 255, 0), rgb(255, 0, 0));
+    width: 100px;
+    height: 100px;
+}
+
+#italia {
+    background: linear-gradient(to right, rgb(1, 255, 1), rgb(255, 255, 255), rgb(255, 0, 0));
+    width: 100px;
+    height: 100px;
+}
