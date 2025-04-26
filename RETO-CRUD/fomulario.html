@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="http://localhost:3000/insertar" method="post">
+        <h1>Registrar</h1>
+        <label>
+            ID:
+            <input type="text" name="id" id="id">
+        </label><br><br>
+
+        <label>
+            Marca:
+            <input type="text" name="marca" id="marca">
+        </label> <br><br>
+
+        <label>
+            Modelo:
+            <input type="text" name="modelo" id="modelo">
+        </label><br><br>
+
+        <label>
+            Placa:
+            <input type="text" name="placa" id="placa">
+        </label><br><br>
+
+        <label>
+            Color:
+            <input type="text" name="color" id="color">
+        </label><br><br>
+        <!---->
+        <label>
+            Año:
+            <input type="text" name="año" id="año">
+        </label><br><br>
+
+        <input type="submit" value="Insertar">
+
+    </form>
+
+    <form action="http://localhost:3000/consultar" method="post">
+        <h1>Consultar</h1>
+        <label>
+            ID:
+            <input type="text" name="id" id="id">
+        </label><br><br>
+
+        <input type="submit" value="Consultar">
+
+    </form>
+
+    <form action="http://localhost:3000/actualizar" method="post">
+        <h1>Actualizar</h1>
+
+        <label>
+            ID:
+            <input type="text" name="id" id="id">
+        </label><br><br>
+
+        <label>
+            Marca:
+            <input type="text" name="marca" id="marca">
+        </label> <br><br>
+
+        <label>
+            Modelo:
+            <input type="text" name="modelo" id="modelo">
+        </label><br><br>
+
+        <label>
+            Placa:
+            <input type="text" name="placa" id="placa">
+        </label><br><br>
+
+        <label>
+            Color:
+            <input type="text" name="color" id="color">
+        </label><br><br>
+        
+        <label>
+            Año:
+            <input type="text" name="año" id="año">
+        </label><br><br>
+
+        <input type="submit" value="Actulizar">
+
+    </form>
+
+    <form action="http://localhost:3000/eliminar" method="post">
+        <h1>Eliminar</h1>
+        <label>
+            ID:
+            <input type="text" name="id" id="id">
+        </label><br><br>
+
+        <input type="submit" value="Eliminar">
+
+    </form>
+
+</body>
+</html>
