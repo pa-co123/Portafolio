@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima en Veracruz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        #weather {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clima en Veracruz</h1>
+    <div id="weather">
+        <p>Cargando datos...</p>
+    </div>
+
+    <script>
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=19.17&longitude=-96.14&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const weatherDiv = document.getElementById('weather');
+                const temp = data.current.temperature_2m;
+                const wind = data.current.wind_speed_10m;
+
+                weatherDiv.innerHTML = `
+                    <h2>Temperatura actual: ${temp}°C</h2>
+                    <h3>Velocidad del viento: ${wind} km/h</h3>
+                `;
+            })
+            .catch(error => {
+                document.getElementById('weather').innerHTML = '<p>Error al obtener datos.</p>';
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>

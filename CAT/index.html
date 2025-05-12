@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Felinos Aleatorios</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #fact-container {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Datos Felinos!</h1>
+        <button id="get-fact-button">Obtener Dato Felino</button>
+        <div id="fact-container"></div>
+    </div>
+
+    <script>
+        const factButton = document.getElementById('get-fact-button');
+        const factContainer = document.getElementById('fact-container');
+        const apiUrl = 'https://catfact.ninja/fact';
+
+        async function fetchCatFact() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                factContainer.textContent = data.fact;
+            } catch (error) {
+                factContainer.textContent = '¡Miau! No se pudo obtener el dato en este momento.';
+                console.error('Error fetching cat fact:', error);
+            }
+        }
+
+        factButton.addEventListener('click', fetchCatFact);
+
+        // Obtener un hecho inicial al cargar la página (opcional)
+        fetchCatFact();
+    </script>
+</body>
+</html>

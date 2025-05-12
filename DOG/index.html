@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Perritos por Raza!</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #contenedor-imagen {
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 2px 2px 5px #ccc;
+            background-color: white;
+        }
+        #imagen-perro {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        #mensaje-carga {
+            color: #777;
+            font-style: italic;
+        }
+        #error-mensaje {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Perritos por Raza!</h1>
+    <label for="raza">Selecciona una raza:</label>
+    <select id="raza">
+        <option value="">Cargando razas...</option>
+    </select>
+    <button id="boton-perro">¡Mostrar perrito!</button>
+    <div id="contenedor-imagen">
+        <p id="mensaje-carga">Esperando una raza...</p>
+        <img id="imagen-perro" src="" alt="Imagen de perro">
+    </div>
+    <p id="error-mensaje"></p>
+
+    <script>
+        const apiKey = 'live_G1Frc1iJah4dyfC0osiAJ0qtQl2uRNbGUPibQj3Z1JLmDa7wwxEL2iindCxNh4dv'; // ¡Reemplaza con tu API Key de The Dog API!
+        const razaSelect = document.getElementById('raza');
+        const botonPerro = document.getElementById('boton-perro');
+        const imagenPerro = document.getElementById('imagen-perro');
+        const contenedorImagen = document.getElementById('contenedor-imagen');
+        const mensajeCarga = document.getElementById('mensaje-carga');
+        const errorMensaje = document.getElementById('error-mensaje');
+
+        async function obtenerRazas() {
+            try {
+                const respuesta = await fetch('https://api.thedogapi.com/v1/breeds', {
+                    headers: {
+                        'x-api-key': apiKey
+                    }
+                });
+                const data = await respuesta.json();
+                razaSelect.innerHTML = '<option value="">Selecciona una raza</option>';
+                data.forEach(raza => {
+                    const opcion = document.createElement('option');
+                    opcion.value = raza.id;
+                    opcion.textContent = raza.name;
+                    razaSelect.appendChild(opcion);
+                });
+            } catch (error) {
+                console.error('Error al obtener las razas:', error);
+                errorMensaje.textContent = 'Error al cargar la lista de razas.';
+            }
+        }
+
+        async function obtenerImagenPorRaza(razaId) {
+            if (!razaId) {
+                errorMensaje.textContent = 'Por favor, selecciona una raza.';
+                return;
+            }
+            errorMensaje.textContent = '';
+            try {
+                mensajeCarga.style.display = 'block';
+                imagenPerro.style.display = 'none';
+                const respuesta = await fetch(`https://api.thedogapi.com/v1/images/search?breed_ids=${razaId}`, {
+                    headers: {
+                        'x-api-key': apiKey
+                    }
+                });
+                const data = await respuesta.json();
+                if (data && data.length > 0 && data[0].url) {
+                    imagenPerro.src = data[0].url;
+                    imagenPerro.onload = () => {
+                        mensajeCarga.style.display = 'none';
+                        imagenPerro.style.display = 'block';
+                    };
+                    imagenPerro.onerror = () => {
+                        mensajeCarga.textContent = '¡Ups! No se pudo cargar la imagen de esta raza.';
+                    };
+                } else {
+                    mensajeCarga.textContent = 'No se encontraron imágenes para esta raza.';
+                    imagenPerro.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error al obtener la imagen de la raza:', error);
+                mensajeCarga.textContent = '¡Hubo un problema al cargar el perrito de esta raza!';
+            }
+        }
+
+        botonPerro.addEventListener('click', () => {
+            const razaSeleccionada = razaSelect.value;
+            obtenerImagenPorRaza(razaSeleccionada);
+        });
+
+        // Cargar la lista de razas al cargar la página
+        obtenerRazas();
+    </script>
+</body>
+</html>
