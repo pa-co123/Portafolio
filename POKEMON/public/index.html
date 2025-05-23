@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PokéAPI Demo</title>
+</head>
+<body>
+    <input type="text" id="pokemonName" placeholder="Introduce un Pokémon">
+    <button onclick="getPokemon()">Buscar</button>
+    <div id="pokemonData"></div>
+
+    <script>
+        async function getPokemon() {
+            const name = document.getElementById("pokemonName").value.toLowerCase();
+            const response = await fetch(`/pokemon/${name}`);
+            const data = await response.json();
+
+            if (data.error) {
+                document.getElementById("pokemonData").innerHTML = "Pokémon no encontrado";
+                return;
+            }
+
+            document.getElementById("pokemonData").innerHTML = `
+                <h2>${data.name.toUpperCase()}</h2>
+                <img src="${data.sprites.front_default}" alt="${data.name}">
+                <p>Altura: ${data.height} | Peso: ${data.weight}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
